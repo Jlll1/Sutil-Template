@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <PackageType>Template</PackageType>
+    <PackageVersion>1.0</PackageVersion>
+    <PackageId>Sutil.Template</PackageId>
+    <Description>Template for Sutil applications</Description>
+    <Authors>Jlll1</Authors>
+    <PackageTags>fsharp;template;sutil;fable;elmish</PackageTags>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <NoDefaultExcludes>true</NoDefaultExcludes>
+
+    <NoBuild>true</NoBuild>
+    <IncludeContentInPack>true</IncludeContentInPack>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <ContentTargetFolders>content</ContentTargetFolders>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="template/*" />
+    <Compile Remove="**/*" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json.schemastore.org/template",
+  "author": "Jlll1",
+  "classifications": [ "Sutil", "Fable", "Elmish" ],
+  "identity": "Sutil.Template",
+  "name": "Sutil Application",
+  "shortName": "Sutil",
+  "tags": {
+    "language": "F#",
+    "type": "project"
+  },
+  "sourceName": "Sutil.App"
+}
