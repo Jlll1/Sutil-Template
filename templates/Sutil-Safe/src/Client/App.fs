@@ -1,7 +1,14 @@
 module App
 
+open Fable.Remoting.Client
+open Shared
 open Sutil
 open Sutil.Styling
+
+let adjectivesApi =
+  Remoting.createApi ()
+  |> Remoting.withRouteBuilder Route.builder
+  |> Remoting.buildProxy<IAdjectivesApi>
 
 type Msg =
   | AdjectiveChanged of string
@@ -19,9 +26,7 @@ let update msg model =
   match msg with
   | AdjectiveChanged a -> { model with Adjective = a }, Cmd.none
   | AdjectiveChangeRequested ->
-      let getAdjective () =
-        [ "cool" ; "fun" ; "fresh" ; "hip" ][(System.Random().Next 3)]
-      model, Cmd.ofMsg (AdjectiveChanged (getAdjective ()))
+      model, Cmd.OfAsync.perform adjectivesApi.getAdjective () AdjectiveChanged
 
 open Sutil.Bulma
 open Sutil.Attr

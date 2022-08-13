@@ -7,6 +7,10 @@
     <Compile Include="App.fs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Shared\Shared.fsproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Fable.Remoting.Client" Version="7.21.0" />
     <PackageReference Include="Sutil" Version="1.0.0-*" />
   </ItemGroup>
 </Project>
