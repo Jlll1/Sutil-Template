@@ -3,11 +3,14 @@ open Fable.Remoting.Server
 open Saturn
 open Shared
 
+let getAdjective () =
+  let adjectives = [ "cool" ; "fun" ; "fresh" ; "hip" ]
+  adjectives[(System.Random().Next adjectives.Length)]
+
 let adjectivesApi : IAdjectivesApi = {
   getAdjective = fun () ->
     async {
-      let adjectives = [ "cool" ; "fun" ; "fresh" ; "hip" ]
-      return adjectives[(System.Random().Next adjectives.Length)]
+      return (getAdjective ())
     }
   }
 
