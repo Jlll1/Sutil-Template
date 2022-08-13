@@ -3,6 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EBDDB228-64FD-46BD-B8FD-D055AFC1534B}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Client", "src\Client\Client.fsproj", "{54F93246-CFE3-4FE2-8E38-D299ED5F47B4}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Server", "src\Server\Server.fsproj", "{892F4C8E-F1C6-475A-8B35-D0AB3BDD2ED9}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Shared", "src\Shared\Shared.fsproj", "{1C97B75E-525C-45B2-82C8-D86A4CFBB7F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -10,5 +18,24 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{54F93246-CFE3-4FE2-8E38-D299ED5F47B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54F93246-CFE3-4FE2-8E38-D299ED5F47B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54F93246-CFE3-4FE2-8E38-D299ED5F47B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54F93246-CFE3-4FE2-8E38-D299ED5F47B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{892F4C8E-F1C6-475A-8B35-D0AB3BDD2ED9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{892F4C8E-F1C6-475A-8B35-D0AB3BDD2ED9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{892F4C8E-F1C6-475A-8B35-D0AB3BDD2ED9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{892F4C8E-F1C6-475A-8B35-D0AB3BDD2ED9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C97B75E-525C-45B2-82C8-D86A4CFBB7F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C97B75E-525C-45B2-82C8-D86A4CFBB7F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C97B75E-525C-45B2-82C8-D86A4CFBB7F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C97B75E-525C-45B2-82C8-D86A4CFBB7F0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{54F93246-CFE3-4FE2-8E38-D299ED5F47B4} = {EBDDB228-64FD-46BD-B8FD-D055AFC1534B}
+		{892F4C8E-F1C6-475A-8B35-D0AB3BDD2ED9} = {EBDDB228-64FD-46BD-B8FD-D055AFC1534B}
+		{1C97B75E-525C-45B2-82C8-D86A4CFBB7F0} = {EBDDB228-64FD-46BD-B8FD-D055AFC1534B}
 	EndGlobalSection
 EndGlobal
