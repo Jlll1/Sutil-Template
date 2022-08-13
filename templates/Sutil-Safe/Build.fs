@@ -63,11 +63,10 @@ Target.create "run" (fun _ ->
       dotnet $"fable watch {Paths.client} --run webpack-dev-server" "." ]
     |> runPararell)
 
-Target.create "test-client" (fun _ ->
-  dotnet $"fable watch {Paths.clientTest} --run webpack-dev-server --env test" "." |> ignore)
-
-Target.create "test-server" (fun _ ->
-  dotnet "watch run" Paths.serverTest |> ignore)
+Target.create "test" (fun _ ->
+  [ dotnet "watch run" Paths.serverTest
+    dotnet $"fable watch {Paths.clientTest} --run webpack-dev-server --env test" "." ]
+  |> runPararell)
 
 open Fake.Core.TargetOperators
 
@@ -77,7 +76,7 @@ let dependencies = [
     ==> "run"
 
   "install-client"
-    ==> "test-client"
+    ==> "test"
 ]
 
 [<EntryPoint>]
