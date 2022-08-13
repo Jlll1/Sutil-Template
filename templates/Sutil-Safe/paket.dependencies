@@ -1,0 +1,12 @@
+source https://api.nuget.org/v3/index.json
+framework: net6.0
+storage: none
+
+nuget Expecto
+nuget Fable.Mocha
+nuget Fable.Remoting.Client
+nuget Fable.Remoting.Giraffe
+nuget Fake.Core.Target
+nuget Fake.IO.FileSystem
+nuget Saturn
+nuget Sutil
