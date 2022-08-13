@@ -1,4 +1,5 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
@@ -9,8 +10,5 @@
   <ItemGroup>
     <ProjectReference Include="..\Shared\Shared.fsproj" />
   </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Fable.Remoting.Client" Version="7.21.0" />
-    <PackageReference Include="Sutil" Version="1.0.0-*" />
-  </ItemGroup>
+  <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>
