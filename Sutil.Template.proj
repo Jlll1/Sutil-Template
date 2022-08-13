@@ -16,9 +16,14 @@
     <ContentTargetFolders>content</ContentTargetFolders>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <Content Include="template/*" />
     <Compile Remove="**/*" />
+    <None Include="LICENSE" Pack="true" PackagePath=""/>
   </ItemGroup>
 
 </Project>
