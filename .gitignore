@@ -1,7 +1,8 @@
-obj/
+.paket/
 bin/
 node_modules/
-.paket/
+obj/
+output/
 paket-files/
 *.fs.js
 
