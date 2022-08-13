@@ -29,12 +29,21 @@ module Helpers =
     |> Proc.run
     |> ignore
 
+  let runPararell p =
+    p |> Seq.toArray
+    |> Array.map redirect
+    |> Array.Parallel.map Proc.run
+    |> ignore
+
 
 module Paths =
-  let sharedPath = Path.getFullName "src/Shared"
-  let serverPath = Path.getFullName "src/Server"
-  let clientPath = Path.getFullName "src/Client"
-  let deployPath = Path.getFullName "deploy"
+  let deploy = Path.getFullName "deploy"
+  let client = Path.getFullName "src/Client"
+  let server = Path.getFullName "src/Server"
+  let shared = Path.getFullName "src/Shared"
+
+  let clientTest = Path.getFullName "test/Client"
+  let serverTest = Path.getFullName "test/Server"
 
 
 open Helpers
@@ -42,27 +51,32 @@ open Helpers
 let execContext = Context.FakeExecutionContext.Create false "build.fsx" [ ]
 Context.setExecutionContext (Context.RuntimeContext.Fake execContext)
 
-Target.create "Clean" (fun _ ->
-    Shell.cleanDir Paths.deployPath
-    run dotnet "fable clean --yes" Paths.clientPath)
+Target.create "clean" (fun _ ->
+    Shell.cleanDir Paths.deploy
+    run dotnet "fable clean --yes" Paths.client)
 
-Target.create "InstallClient" (fun _ -> run npm "install" ".")
+Target.create "install-client" (fun _ -> run npm "install" ".")
 
-Target.create "Run" (fun _ ->
-    run dotnet "build" Paths.sharedPath
-    [ dotnet "watch run" Paths.serverPath
-      dotnet $"fable watch {Paths.clientPath} --run webpack-dev-server" "." ]
-    |> Seq.toArray
-    |> Array.map redirect
-    |> Array.Parallel.map Proc.run
-    |> ignore)
+Target.create "run" (fun _ ->
+    run dotnet "build" Paths.shared
+    [ dotnet "watch run" Paths.server
+      dotnet $"fable watch {Paths.client} --run webpack-dev-server" "." ]
+    |> runPararell)
+
+Target.create "test" (fun _ ->
+    [ dotnet "watch run" Paths.serverTest
+      dotnet $"fable watch {Paths.clientTest} --run webpack-dev-server --env test" "." ]
+    |> runPararell)
 
 open Fake.Core.TargetOperators
 
 let dependencies = [
-  "Clean"
-    ==> "InstallClient"
-    ==> "Run"
+  "clean"
+    ==> "install-client"
+    ==> "run"
+
+  "install-client"
+    ==> "test"
 ]
 
 [<EntryPoint>]
@@ -70,7 +84,7 @@ let main args =
   try
     match args with
     | [| target |] -> Target.runOrDefault target
-    | _ -> Target.runOrDefault "Run"
+    | _ -> Target.runOrDefault "run"
     0
   with e ->
     printfn "%A" e
