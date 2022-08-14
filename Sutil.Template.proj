@@ -2,13 +2,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageType>Template</PackageType>
-    <PackageVersion>1.0.1</PackageVersion>
+    <PackageVersion>2.0.0</PackageVersion>
     <PackageId>Sutil.Template</PackageId>
     <Description>Template for Sutil applications</Description>
     <Authors>Jlll1</Authors>
     <PackageTags>fsharp;template;sutil;fable;elmish</PackageTags>
     <TargetFramework>netstandard2.0</TargetFramework>
     <NoDefaultExcludes>true</NoDefaultExcludes>
+
+    <PackageProjectUrl>https://github.com/Jlll1/Sutil-Template</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/Jlll1/Sutil-Template/main/public/logo.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/Jlll1/Sutil-Template.git</RepositoryUrl>
 
     <NoBuild>true</NoBuild>
     <IncludeContentInPack>true</IncludeContentInPack>
