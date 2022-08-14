@@ -1,4 +1,7 @@
 # Sutil-Template
+[![NuGet](https://img.shields.io/nuget/v/Sutil.Template)](https://www.nuget.org/packages/Sutil.Template)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/Sutil.Template)](https://www.nuget.org/packages/Sutil.Template)
+
 Dotnet CLI templates for creating Sutil applications.
 
 ## Included templates
