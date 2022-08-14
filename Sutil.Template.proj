@@ -10,6 +10,11 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <NoDefaultExcludes>true</NoDefaultExcludes>
 
+    <PackageProjectUrl>https://github.com/Jlll1/Sutil-Template</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/Jlll1/Sutil-Template/blob/main/LICENSE</PackageLicenseUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/Jlll1/Sutil-Template/main/public/logo.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/Jlll1/Sutil-Template.git</RepositoryUrl>
+
     <NoBuild>true</NoBuild>
     <IncludeContentInPack>true</IncludeContentInPack>
     <IncludeBuildOutput>false</IncludeBuildOutput>
