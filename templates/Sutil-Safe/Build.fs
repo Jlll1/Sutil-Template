@@ -39,7 +39,7 @@ module Helpers =
 module Paths =
   let deploy = Path.getFullName "deploy"
   let client = Path.getFullName "src/Client"
-  let publish = Path.getFullName "src/Client/public"
+  let output = Path.getFullName "src/Client/output"
   let server = Path.getFullName "src/Server"
   let shared = Path.getFullName "src/Shared"
 
