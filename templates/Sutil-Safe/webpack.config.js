@@ -2,7 +2,7 @@
 
 const CONFIG = {
   indexHtml: './src/Client/public/index.html',
-  entryFile: './src/Client/App.fs.js',
+  entryFile: './src/Client/public/App.js',
   publicDir: './src/Client/public',
   outputDir: './deploy/public',
   devServerPort: 8080,
@@ -21,8 +21,8 @@ const CONFIG = {
 }
 
 const CONFIG_TEST = {
-  indexHtml: './test/Client/index.html',
-  entryFile: './test/Client/Client.Test.fs.js',
+  indexHtml: './test/Client/public/index.html',
+  entryFile: './test/Client/public/Client.Test.js',
   publicDir: './test/Client',
   outputDir: './test/Client',
   devServerPort: 8081,
