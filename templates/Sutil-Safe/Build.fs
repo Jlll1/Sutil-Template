@@ -44,7 +44,7 @@ module Paths =
   let shared = Path.getFullName "src/Shared"
 
   let clientTest = Path.getFullName "test/Client"
-  let clientTestPublish = Path.getFullName "test/Client/public"
+  let clientTestOutput = Path.getFullName "test/Client/output"
   let serverTest = Path.getFullName "test/Server"
 
 
@@ -62,12 +62,12 @@ Target.create "install-client" (fun _ -> run npm "install" ".")
 Target.create "run" (fun _ ->
     run dotnet "build" Paths.shared
     [ dotnet "watch run" Paths.server
-      dotnet $"fable watch {Paths.client} -o {Paths.publish} --run webpack-dev-server" "." ]
+      dotnet $"fable watch {Paths.client} -o {Paths.output} --run webpack-dev-server" "." ]
     |> runPararell)
 
 Target.create "test" (fun _ ->
   [ dotnet "watch run" Paths.serverTest
-    dotnet $"fable watch {Paths.clientTest} -o {Paths.clientTestPublish} --run webpack-dev-server --env test" "." ]
+    dotnet $"fable watch {Paths.clientTest} -o {Paths.clientTestOutput} --run webpack-dev-server --env test" "." ]
   |> runPararell)
 
 open Fake.Core.TargetOperators
