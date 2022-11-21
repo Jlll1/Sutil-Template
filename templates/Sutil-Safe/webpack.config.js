@@ -21,8 +21,8 @@ const CONFIG = {
 }
 
 const CONFIG_TEST = {
-  indexHtml: './test/Client/public/index.html',
-  entryFile: './test/Client/public/Client.Test.js',
+  indexHtml: './test/Client/output/index.html',
+  entryFile: './test/Client/output/Client.Test.js',
   publicDir: './test/Client',
   outputDir: './test/Client',
   devServerPort: 8081,
