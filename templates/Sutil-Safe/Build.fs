@@ -55,7 +55,7 @@ Context.setExecutionContext (Context.RuntimeContext.Fake execContext)
 
 Target.create "clean" (fun _ ->
     Shell.cleanDir Paths.deploy
-    run dotnet "fable clean --yes" Paths.client)
+    run dotnet $"fable clean --yes -o {Paths.output}" ".")
 
 Target.create "install-client" (fun _ -> run npm "install" ".")
 
