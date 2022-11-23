@@ -1,9 +1,9 @@
 // Based on https://github.com/fable-compiler/webpack-config-template
 
 const CONFIG = {
-  indexHtml: './src/Client/public/index.html',
-  entryFile: './src/Client/App.fs.js',
-  publicDir: './src/Client/public',
+  indexHtml: './src/Client/output/index.html',
+  entryFile: './src/Client/output/App.js',
+  publicDir: './src/Client/output',
   outputDir: './deploy/public',
   devServerPort: 8080,
   devServerProxy: {
@@ -21,8 +21,8 @@ const CONFIG = {
 }
 
 const CONFIG_TEST = {
-  indexHtml: './test/Client/index.html',
-  entryFile: './test/Client/Client.Test.fs.js',
+  indexHtml: './test/Client/output/index.html',
+  entryFile: './test/Client/output/Client.Test.js',
   publicDir: './test/Client',
   outputDir: './test/Client',
   devServerPort: 8081,
