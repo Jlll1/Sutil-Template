@@ -3,7 +3,7 @@
 const CONFIG = {
   indexHtml: './src/Client/output/index.html',
   entryFile: './src/Client/output/App.js',
-  publicDir: './src/Client/public',
+  publicDir: './src/Client/output',
   outputDir: './deploy/public',
   devServerPort: 8080,
   devServerProxy: {
